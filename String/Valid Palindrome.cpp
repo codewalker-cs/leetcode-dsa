@@ -16,6 +16,9 @@ Alphanumeric characters include:
 
 C++ provides a built-in function:
 isalnum(char c)
+this needs the addition of extra library called <cctype>
+So we will try to avoid it and make the function to check if the given 
+character is alphanumeric or not
 
 isalnum(c) returns true if 'c' is a letter or a digit, otherwise false.
 This helps us skip spaces and special characters easily.
@@ -44,6 +47,15 @@ using namespace std;
 
 class Solution {
 public:
+    bool isalphanumeric(char ch)
+    {
+       if((ch >='0' || ch <='9') || (tolower(ch) >= 'a' && tolower(ch)<='z'))
+       {
+            return true;
+       }
+       return false;
+    }
+   
     bool isPalindrome(string s) {
         int i = 0;
         int j = s.size() - 1;
@@ -51,10 +63,10 @@ public:
         while (i < j) {
 
             // Skip non-alphanumeric characters from left
-            while (i < j && !isalnum(s[i])) i++;
+            while (i < j && !isalphanumeric(s[i])) i++;
 
             // Skip non-alphanumeric characters from right
-            while (i < j && !isalnum(s[j])) j--;
+            while (i < j && !isalphanumeric(s[j])) j--;
 
             // Compare characters (case-insensitive)
             if (tolower(s[i]) != tolower(s[j])) {
