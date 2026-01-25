@@ -22,7 +22,7 @@ Approach:
 2. Sort the array.
 3. Slide a window of size k over the sorted array.
 4. For each window, compute:
-      difference = nums[i + k - 1] - nums[i]
+      difference = nums[i]-nums[i-k+1]
 5. Return the minimum difference found.
 
 Time Complexity:
