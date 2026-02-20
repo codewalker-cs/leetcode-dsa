@@ -84,7 +84,6 @@ public:
         return (x & (x + 1)) == 0;
     }
 
-    // Default LeetCode entry
     bool hasAlternatingBits(int n) {
         return hasAlternatingBits_loop(n);
         // or:
