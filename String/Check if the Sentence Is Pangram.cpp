@@ -31,7 +31,9 @@ public:
     bool checkIfPangram(string sentence) {
         int s=sentence.size();
         if(s<26) return 0;
+       
         vector<int> freq(26,0);
+    
         for(char &c : sentence)
         {
             freq[c-'a']++;
