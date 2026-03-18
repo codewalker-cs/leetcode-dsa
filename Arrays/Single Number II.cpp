@@ -51,11 +51,28 @@ Space Complexity: O(1)
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int ones = 0, twos = 0;
+        // unordered_map<int,int> freq;
+        // int n=nums.size();
+        // for(int i=0;i<n;i++)
+        // {
+        //     freq[nums[i]]++;
+        // }
 
-        for(int x : nums) {
-            ones = (ones ^ x) & ~twos;
-            twos = (twos ^ x) & ~ones;
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(freq[nums[i]]%3!=0)
+        //     {
+        //         return nums[i];
+        //     }
+        // }
+        // return 0;
+
+        int ones=0, twos=0;
+
+        for(int x:nums)
+        {
+            ones=(ones^x)&~twos;
+            twos=(twos^x)&~ones;
         }
 
         return ones;
