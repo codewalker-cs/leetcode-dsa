@@ -18,4 +18,4 @@ Build strong fundamentals for internships and FAANG-level interviews.
 
 ## Progress
 - Started: Jan 2026
-- Current streak: 30 days
+- Current streak: -- days
