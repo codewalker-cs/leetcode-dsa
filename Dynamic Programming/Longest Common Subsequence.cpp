@@ -38,11 +38,9 @@ Space Complexity:
 O(n * m)
 */
 
-class Solution
-{
+class Solution {
 public:
-    int longestCommonSubsequence(string t1, string t2)
-    {
+    int longestCommonSubsequence(string t1, string t2) {
         int n=t1.size(),m=t2.size();
         vector<vector<int>> dp(n+1,vector<int>(m+1,0));
 
