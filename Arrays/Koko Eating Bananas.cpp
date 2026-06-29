@@ -57,11 +57,11 @@ public:
         while(l<=r)
         {
             int k=l+((r-l)/2);
-            int totalvalue=0;
+            long long totalvalue=0;
 
             for(int &i:piles)
             {
-                totalvalue+=(i+k-1)/k;
+                totalvalue+=(long long)(i+k-1)/k;
             }
 
             if(totalvalue<=h)
