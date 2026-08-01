@@ -6,6 +6,7 @@ and prepare for software engineering interviews.
 ## Tech Stack
 - C++
 - STL
+- Python
 
 ## Focus Areas
 - Arrays & Strings
