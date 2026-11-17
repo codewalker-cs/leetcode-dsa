@@ -1,0 +1,44 @@
+
+/*
+Intuition:
+Every character must appear in at most one partition.
+So, all occurrences of a character must belong to
+the same partition.
+
+Approach:
+1. Store the last occurrence of every character.
+2. Traverse the string.
+3. Extend the current partition's ending index
+   whenever we encounter a character whose last
+   occurrence is farther away.
+4. When current index reaches the ending index,
+   complete the partition.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+*/
+
+class Solution {
+public:
+    vector<int> partitionLabels(string s) {
+        vector<int> last(26, 0);
+
+        for (int i = 0; i < s.size(); i++) {
+            last[s[i] - 'a'] = i;
+        }
+
+        vector<int> ans;
+        int start = 0, end = 0;
+
+        for (int i = 0; i < s.size(); i++) {
+            end = max(end, last[s[i] - 'a']);
+
+            if (i == end) {
+                ans.push_back(end - start + 1);
+                start = i + 1;
+            }
+        }
+
+        return ans;
+    }
+};
